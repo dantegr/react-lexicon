@@ -5,7 +5,7 @@ const Results = ({word, frequency,additionalInfo, similarWords}) => {
   return(
     <div className="results" >
       <div className="results-header">
-        <h2 className="results-header__title">{word}</h2>
+        <h1 className="results-header__title capitalize">{word}</h1>
       </div>
       <div className="results-content">
       <p>Frequency: {frequency}</p>

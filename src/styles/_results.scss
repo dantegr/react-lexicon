@@ -3,10 +3,12 @@
     margin-bottom: 4.8rem;
     margin-right: 2.4rem;
     margin-left: 2.4rem;
-    width: 700px;
-    max-width: 700px;
+    width: 600px;
+    max-width: 600px;
     position: fixed;
-    top: 220px;
+    top: 50%;
+    left: 49%;
+    transform: translate(-50%, -50%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
@@ -43,6 +45,22 @@
     max-height: 300px;
     overflow: auto;
     
+  }
+
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
   }
 
  
