@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import Results from './Results';
+import Header from './Header';
+import Footer from './Footer';
 import { css } from '@emotion/core';
-import { RingLoader } from 'react-spinners';
+import { ScaleLoader} from 'react-spinners';
 
 function App() {
 
@@ -23,6 +25,10 @@ function App() {
    display: block;
    margin: 0 auto;
    border-color: red;
+   position: fixed;
+   top: 40%;
+   left: 50%;
+   transform: translate(-50%, -50%);
  `;
 
    
@@ -56,33 +62,36 @@ function App() {
  
 
   return (
-    <div>
+    <div className="app">
+      <Header />
+      <div className="container">
       <form onSubmit={getSearch} className="search-form">
             <input className="search-bar" type="text" value={search} onChange={updateSearch} />
             <button className="search-button" type="submit">Search</button>
       </form>
-
+      </div>
       {isError ? (
             <p></p>
           ) : (
           <div>
           {isLoading ? (
             <div className='sweet-loading'>
-            <RingLoader
+            <ScaleLoader
               css={override}
               sizeUnit={"px"}
-              size={150}
-              color={'#0000cd'}
+              size={30}
+              color={'#006400'}
             />
             </div> 
           ) : (
-            <div className="weather">
+            <div className="container">
                 <Results
                 word={word} frequency={frequency} additionalInfo={additionalInfo} similarWords={similarWords}/>
               </div>
             )}
             </div>
           )}
+          <Footer />
       </div>
   );
 }

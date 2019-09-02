@@ -3,12 +3,15 @@ import React from 'react';
 const Results = ({word, frequency,additionalInfo, similarWords}) => {
 
   return(
-    <div >
-      <h2>{word}</h2>
-    
+    <div className="results" >
+      <div className="results-header">
+        <h2 className="results-header__title">{word}</h2>
+      </div>
+      <div className="results-content">
       <p>Frequency: {frequency}</p>
-      <p>Additinal inforation:<a href={additionalInfo}>{additionalInfo}</a></p>
-     
+      <p>Additinal inforation: <a href={additionalInfo}>{additionalInfo}</a></p>
+      <hr />
+      <div className="results-list">
       <ul>
           {similarWords.map(similarWord => (
              
@@ -16,7 +19,8 @@ const Results = ({word, frequency,additionalInfo, similarWords}) => {
           ))}
 
       </ul>
-      
+      </div>
+      </div>
     </div>
   );
 };
